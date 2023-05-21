@@ -13,13 +13,26 @@
 .container{
     min-height: 100vh;
     background-color: #89A488;
-
     display: flex;
     align-items: center;
     justify-content: center;
     flex-flow: column;
     padding-bottom: 60px;
+    background-image: linear-gradient(to left, #89A488, #4a5749, rgb(0, 0, 0));
+    background-size: 500% 100%;
+    animation: Document 3s infinite alternate;
 }
+@keyframes Document {
+    0% {
+        background-position-x: 0%;
+    }
+
+    100% {
+        background-position-x: 100%;
+    }
+
+}
+
 
 .container form{
     background: #fff;
