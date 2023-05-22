@@ -25,11 +25,11 @@
                 <div class="card-number-box">################</div>
                 <div class="flexbox">
                     <div class="box">
-                        <span>card holder</span>
-                        <div class="card-holder-name">full name</div>
+                        <span>Titular do cartão</span>
+                        <div class="card-holder-name">Nome completo</div>
                     </div>
                     <div class="box">
-                        <span>expires</span>
+                        <span>Expira</span>
                         <div class="expiration">
                             <span class="exp-month">mm</span>
                             <span class="exp-year">yy</span>
@@ -51,23 +51,24 @@
 
         <form action="" class="oi">
             <div class="inputBox">
-                <span>card number</span>
-                <input type="text" maxlength="16" class="card-number-input">
+                <span>Número do cartão</span>
+                <input type="text" maxlength="16" class="card-number-input" placeholder="Digite o número do cartão...">
             </div>
             <div class="inputBox">
-                <span>donation value</span>
-                <input type="text" placeholder="R$ 0,00" maxlength="16" class="card-number-input"
+                <span>Valor da doação</span>
+                <input type="text" placeholder="Digite o valor da doação..." maxlength="16" class="card-number-input"
                     oninput="formatarReais(this)">
             </div>
             <div class="inputBox">
-                <span>card holder</span>
-                <input type="text" class="card-holder-input">
+                <span>Titular do cartão</span>
+                <input type="text" class="card-holder-input" placeholder="Digite o nome do TITULAR DO CARTÃO...">
+                <p class="error-message" style="display: none;">Apenas letras são permitidas.</p>
             </div>
             <div class="flexbox">
                 <div class="inputBox">
-                    <span>expiration mm</span>
+                    <span>Expiração mm</span>
                     <select name="" id="" class="month-input">
-                        <option value="month" selected disabled>month</option>
+                        <option value="month" selected disabled>Mês</option>
                         <option value="01">01</option>
                         <option value="02">02</option>
                         <option value="03">03</option>
@@ -83,9 +84,9 @@
                     </select>
                 </div>
                 <div class="inputBox">
-                    <span>expiration yy</span>
+                    <span>Expiração yy</span>
                     <select name="" id="" class="year-input">
-                        <option value="year" selected disabled>year</option>
+                        <option value="year" selected disabled>ano</option>
                         <option value="2021">2021</option>
                         <option value="2022">2022</option>
                         <option value="2023">2023</option>
@@ -100,7 +101,7 @@
                 </div>
                 <div class="inputBox">
                     <span>cvv</span>
-                    <input type="text" maxlength="4" class="cvv-input">
+                    <input type="text" maxlength="4" class="cvv-input" placeholder="Digite o CVV...">
                 </div>
             </div>
             <input type="submit" value="submit" class="submit-btn">
@@ -151,10 +152,67 @@
             }
         }
 
+        function permitirApenasNumeros() {
+            const inputElement = document.querySelector('.card-number-input');
+            inputElement.addEventListener('input', function (event) {
+                // Remove qualquer caractere não numérico
+                let valorAtual = event.target.value;
+                let valorNumerico = valorAtual.replace(/\D/g, '');
+
+                // Atualiza o valor do campo de entrada apenas com os números
+                event.target.value = valorNumerico;
+            });
+        }
+
+        // Chame a função para permitir apenas números no campo de entrada do cartão
+        permitirApenasNumeros();
+
+
+
+
+        function permitirApenasLetras() {
+            const inputElement = document.querySelector('.card-holder-input');
+            const errorMessage = document.querySelector('.error-message');
+
+            inputElement.addEventListener('input', function (event) {
+                // Remove qualquer caractere não alfabético
+                let valorAtual = event.target.value;
+                let valorAlfabetico = valorAtual.replace(/[^a-zA-ZÀ-ÿ ]/g, '');
+
+                // Verifica se há números no valor
+                let contemNumeros = /\d/.test(valorAlfabetico);
+
+                // Atualiza o valor do campo de entrada apenas com as letras
+                event.target.value = valorAlfabetico;
+
+                // Exibe a mensagem de erro se houver números
+                if (contemNumeros) {
+                    errorMessage.style.display = 'block';
+                } else {
+                    errorMessage.style.display = 'none';
+                }
+            });
+        }
+
+        // Chame a função para permitir apenas letras no campo de entrada do titular do cartão
+        permitirApenasLetras();
+
+
+
+        document.querySelector('.cvv-input').addEventListener('input', function (event) {
+            // Remove qualquer caractere não numérico
+            const inputValue = event.target.value;
+            const numericValue = inputValue.replace(/\D/g, '');
+
+            // Atualiza o valor do campo de entrada apenas com os números
+            event.target.value = numericValue;
+        });
+
+
+
     </script>
 
 
-    <script src="js/fun_placeholder.js"></script>
 
 </body>
 
