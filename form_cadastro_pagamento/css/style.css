@@ -34,7 +34,7 @@ body {
   margin-left: h;
   justify-content: center;
   align-items: center;
-  transform: translate(15vh, 0vh);
+  transform: translate(-10vh, 0vh);
   position: relative;
   /* width: 257px; */
   /* height: 73px; */
@@ -55,7 +55,7 @@ body {
   align-items: center;
   top: -15vh;
   margin-top: -75vh;
-  transform: translate(-24vh, 0vh);
+  transform: translate(-43vh, 0vh);
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
@@ -92,7 +92,7 @@ body {
   padding: 20px;
   /* justify-content: center; */
   /* align-items: center; */
-  margin: 4em;
+  /* margin: 4em; */
   border-radius: 5em;
 }
 
@@ -115,6 +115,7 @@ h2 {
   margin-bottom: 10px;
   padding-bottom: 20px;
   position: relative;
+
 }
 
 .form-control label {
@@ -183,6 +184,9 @@ h2 {
   border-top: 1px solid #89A488;
 }
 
+.input_dd{
+  display: flex;
+}
 
 @media (max-width: 960px){
   .logo{

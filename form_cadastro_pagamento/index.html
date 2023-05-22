@@ -12,30 +12,29 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css">
-    <title>(Criar Conta) Formulário</title>
+    <title>(Cadastro Pagamento) Formulário</title>
   </head>
   <body>
 
     
-      <p class="titulo">Bem-vindo(a) !</p>
-      <p class="sub_titulo">Entre com a sua conta para acessar 
-        nossa plataforma!</p>
+      <p class="titulo">Informe seus dados pessoais</p>
+      <p class="sub_titulo">Preencha seus dados</p>
 
         <img src="img/planta 1.png" class="logo">
   
     <div class="container">
       <div class="header">
-        <h2>Criar Uma Conta</h2>
+        <h2>Cadastro Pagamento</h2>
       </div>
 
       <div class="linha"></div>
       <form id="form" class="form">
         <div class="form-control">
-          <label for="username">Nome de usuário</label>
+          <label for="username">Nome Completo</label>
           <input
             type="text"
             id="username"
-            placeholder="Digite seu nome de usuário..."
+            placeholder="Digite seu nome de completo..."
           />
           <i class="fas fa-exclamation-circle"></i>
           <i class="fas fa-check-circle"></i>
@@ -43,19 +42,19 @@
         </div>
 
         <div class="form-control">
-          <label for="email">Email</label>
-          <input type="text" id="email" placeholder="Digite seu email.." />
+          <label for="email">RG</label>
+          <input type="text" id="rg" placeholder="Digite seu RG.." />
           <i class="fas fa-exclamation-circle"></i>
           <i class="fas fa-check-circle"></i>
           <small>Mensagem de erro</small>
         </div>
 
         <div class="form-control">
-          <label for="password">Senha</label>
+          <label for="password">CPF</label>
           <input
-            type="password"
-            id="password"
-            placeholder="Digite sua senha..."
+            type="number"
+            id="cpf"
+            placeholder="Digite seu CPF corretamente..."
           />
           <i class="fas fa-exclamation-circle"></i>
           <i class="fas fa-check-circle"></i>
@@ -63,11 +62,23 @@
         </div>
 
         <div class="form-control">
-          <label for="password-confirmation">Confirmação de senha</label>
+          <label for="dd">DD</label>
           <input
-            type="password"
-            id="password-confirmation"
-            placeholder="Digite sua senha novamente..."
+            type="number"
+            id="dd"
+            placeholder="Digite o DD corretamente..." class="input_dd"
+          />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+
+        <div class="form-control">
+          <label for="number">Número</label>
+          <input
+            type="number"
+            id="number"
+            placeholder="Digite seu número corretamente..."
           />
           <i class="fas fa-exclamation-circle"></i>
           <i class="fas fa-check-circle"></i>

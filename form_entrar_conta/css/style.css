@@ -146,6 +146,7 @@ h2 {
 }
 
 .form button {
+  position: relative;
   background-color: #89A488;
   border: 2px solid #89A488;
   color: #fff;
@@ -179,10 +180,42 @@ h2 {
   color: #e74c3c;
 }
 
+.esquecer_senha {
+  display: flex;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  color: #4F74BD;
+}
+
+.sem_conta {
+  display: flex;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+
+
+  color: #807F7F;
+}
+
+.container-button {
+  display: grid;
+  margin-top: 2vh;
+}
+
+.adicionar_usuario {
+  width: 2vh;
+  left: 2vh;
+  position: absolute;
+}
+
 .linha {
   border-top: 1px solid #89A488;
 }
-
 
 @media (max-width: 960px){
   .logo{
@@ -197,5 +230,6 @@ h2 {
   .container{
     margin-left: 0;
     margin-top: 0;
+    height: 100vh;
   }
 }
